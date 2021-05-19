@@ -1,8 +1,10 @@
 <?php
 
 namespace Nether\Composer;
+use Composer;
 
-class Plugin {
+class Plugin
+extends Composer\Plugin\PluginInterface {
 
 
 }
