@@ -1,7 +1,17 @@
 {
 	"name": "netherphp/composer-plugin",
+	"description": "Adds some features to Composer via its plugin system.",
 	"type": "composer-plugin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Bob Majdak Jr",
+			"email": "bob@pegasusgate.net",
+			"homepage": "https://pegasusgate.net/+bob"
+		}
+	],
 	"require": {
+		"php": "^7.0 || ^8.0",
 		"composer-plugin-api": "^2.0"
 	},
 	"require-dev": {
