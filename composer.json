@@ -8,6 +8,6 @@
 		"composer/composer": "^2.0"
 	},
 	"extra": {
-		"class": "My\\Plugin"
+		"class": "Nether\\Composer\\Plugin"
 	}
 }
