@@ -4,9 +4,9 @@ This plugin adds a few features to Composer via its plugin system.
 
 
 
-# New Features
+## New Features
 
-## Update Warning / Block
+### Update Warning / Block
 
 If `update-warning.txt` exists in your project root, and is not empty, any attempts to run `composer update` will fail with the message in that text file.
 
@@ -17,7 +17,7 @@ bob@mcp:/opt/web-dev git:master $ composer update
 bruh you aint ready for this
 ```
 
-Perhaps today you know that there is an update upstream that will break your project because it is a work in progress and its not worth trying to do any sort of insane version constraint workaround. Or maybe you keep typing `composer update` on production like an idiot instead of `composer install`.
+Perhaps today you know that there is an update upstream that will break your project because it is a work in progress and its not worth trying to do any sort of insane version constraint workaround, and you will not remember this a month from now. Or maybe you keep typing `composer update` on production like an idiot instead of `composer install`.
 
 You can just create `update-warning.txt` in your project root with any text editor you want. Additionally there is a new Composer command for doing it.
 
@@ -27,7 +27,7 @@ To allow updating again simply empty the file, delete the file, or use `set-upda
 
 
 
-# Install
+## Install
 
-`composer install netherphp/composer-plugin`
+`composer require netherphp/composer-plugin`
 
