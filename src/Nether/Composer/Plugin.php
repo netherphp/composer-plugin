@@ -21,6 +21,8 @@ implements
 	@date 2021-05-19
 	//*/
 
+		$this->Composer = $Inst;
+		$this->IO = $IO;
 		return;
 	}
 
@@ -61,7 +63,7 @@ implements
 	// Composer\Plugin\Capable /////////////////////////////////////
 
 	public function
-	getCapabilities():
+	GetCapabilities():
 	array {
 
 		return [
@@ -79,6 +81,15 @@ implements
 
 		$File = Nether\Composer\Command\SetUpdateWarning::GetFilename();
 		$Message = NULL;
+
+		// that event actually gets fired for more than update commands and
+		// im still having a hard time getting access to all the things
+		// composer makes protected or private and has exactly what i need
+		// to know. like the damn IO->input, with no helper methods that are
+		// actually helpful upon it.
+
+		if(!in_array('update',$_SERVER['argv']))
+		return;
 
 		// no cop no stop
 
