@@ -11,7 +11,7 @@ class SetUpdateWarning
 extends Composer\Command\BaseCommand {
 
 	static protected // string - this will force 7.4+ lol
-	$Filename = 'update-warning.txt';
+	$Filename = 'composer-update-warning.txt';
 
 	static public function
 	GetFilename():
