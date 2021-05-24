@@ -1,33 +1,34 @@
 # Nether Composer Plugin
 
-This plugin adds a few features to Composer via its plugin system.
+Add features to Composer via a plugin.
 
 
 
-## New Features
+# New Features
 
-### Update Warning / Block
+## Update Warning / Block
 
-If `update-warning.txt` exists in your project root, and is not empty, any attempts to run `composer update` will fail with the message in that text file.
+If **composer-update-warning.txt** exists in the project along side the **composer.json** file then any attempts to run `composer update` will fail, citing the contents of that text file.
 
-```cli
-bob@mcp:/opt/web-dev git:master $ composer update
+	bob@mcp:/opt/web-prod git:master $ composer update
 
-[Exception]
-bruh you aint ready for this
-```
+	[Exception]
+	Why are you doing this on production?
+	Use `composer install` instead.
 
-Perhaps today you know that there is an update upstream that will break your project because it is a work in progress and its not worth trying to do any sort of insane version constraint workaround, and you will not remember this a month from now. Or maybe you keep typing `composer update` on production like an idiot instead of `composer install`.
+Handy because maybe you know of an incoming incompability that the version constraints are not going to juggle and you just not prepared to deal with it. Or maybe you keep typing `composer update` on production like an idiot instead of `composer install`.
 
-You can just create `update-warning.txt` in your project root with any text editor you want. Additionally there is a new Composer command for doing it.
+You can just create **composer-update-warning.txt** in your project root with any text editor you want. Additionally there is a new Composer command for doing it.
 
-* `composer set-update-warning "bruh you aint ready for this"`
+	composer set-update-warning "bruh you aint ready for this"
 
-To allow updating again simply empty the file, delete the file, or use `set-update-warning` with no message and Composer will delete it for you.
+To allow updating again simply empty the file, delete the file, or use `composer set-update-warning` with no message and Composer will delete it for you. It is just a boring text file that way anyone who wants to see why there is an update warning without actually trying can also be informed.
+
+Note, when using `set-update-warning` the quotes are totes required.
 
 
 
-## Install
+# Install
 
 `composer require netherphp/composer-plugin`
 
